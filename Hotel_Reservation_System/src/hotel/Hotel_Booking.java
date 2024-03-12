@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Hotel_Booking {
 	
-	private static String url = "jdbc:mysql://localhost:3306/test";
+	private static String url = "jdbc:mysql://localhost:3306/reservation";
 	private static String user = "root";
 	private static String pass = "Nayan@1102";
 
@@ -91,13 +91,16 @@ public class Hotel_Booking {
 		int room = sc.nextInt();
 		System.out.println("Enter mobile number");
 		String mobile = sc.next();
+		System.out.println("Enter number of people(each reservation can have only 4 people or less than that)");
+		int people = sc.nextInt();
 		
-		String query ="insert into hotel(guest_name,room_no,mobile_no) values(?,?,?)";
+		String query ="insert into hotel(guest_name,room_no,mobile_no,no_of_people) values(?,?,?,?)";
 		try {
 			PreparedStatement pst = con.prepareStatement(query);
 			pst.setString(1, name);
 			pst.setInt(2, room);
 			pst.setString(3, mobile);
+			pst.setInt(4, people);
 			
 			int n=pst.executeUpdate();
 			
@@ -121,14 +124,15 @@ public class Hotel_Booking {
 		try {
 			PreparedStatement pst = con.prepareStatement(query);
 			ResultSet rs = pst.executeQuery(query);
-			System.out.println("guest_id  Name       Room_no  mobile_no      Date ");
+			System.out.println("guest_id  Name       Room_no  mobile_no      Date                People");
 			while(rs.next()) {
 				int id = rs.getInt("reservation_id");
 				String name = rs.getString("guest_name");
 				int room = rs.getInt("room_no");
 				String mobile = rs.getString("mobile_no");
 				String date = rs.getString("reservation_date");
-				System.out.printf("%-9s %-10s %-8s %-14s %s %n",id,name,room,mobile,date);
+				int people = rs.getInt("no_of_people");
+				System.out.printf("%-9s %-10s %-8s %-14s %-22s %s %n",id,name,room,mobile,date,people);
 				
 			}
 			pst.close();
