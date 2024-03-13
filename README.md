@@ -1,17 +1,15 @@
 # Hotel Reservation System
-#### The Hotel Reservation System is a Java program that allows users to reserve hotel rooms . The program allows users to input their personal details and select a room for reservation. The program then reserves the selected room. 
+#### This is a Java project for managing reservations, allowing reservation manager to enter and view reservations. The project is designed to work in the Java console.
 
 ## The Hotel Reservation System provides the following features:
 
-#### -Reserving a room using details
-#### -Display of all reservations
-#### -Getting their room number through reservation id and name
-#### -Update details like mobile number and correction of name
-#### -Removing reservation
+#### -Adding new entry
+#### -View all entries
+#### -Getting the room number of entry through reservation id and name
+#### -Update details like mobile number and correcting the name of entry
+#### -Removing entry from reservation
 
-# Used Languages
+# Technologies Used
 #### -JAVA 
-
-# Used Databse
 #### -MySQL
 
