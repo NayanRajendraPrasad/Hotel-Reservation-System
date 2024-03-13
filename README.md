@@ -3,15 +3,15 @@
 
 ## The Hotel Reservation System provides the following features:
 
-#### Reserving a room using details
-#### Display of all reservations
-#### Getting their room number through reservation id and name
-#### Update details like mobile number and correction of name
-#### Removing reservation
+#### -Reserving a room using details
+#### -Display of all reservations
+#### -Getting their room number through reservation id and name
+#### -Update details like mobile number and correction of name
+#### -Removing reservation
 
 # Used Languages
-#### JAVA 
+#### -JAVA 
 
 # Used Databse
-#### MySQL
+#### -MySQL
 
